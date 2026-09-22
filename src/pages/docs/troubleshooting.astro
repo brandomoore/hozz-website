@@ -4,6 +4,7 @@ import Callout from '../../components/docs/Callout.astro';
 import MessageList from '../../components/docs/MessageList.astro';
 import Code from '../../components/docs/Code.astro';
 import { page } from '../../data/docs-nav';
+import { GITHUB_URL } from '../../data/site';
 
 const entry = page('/docs/troubleshooting/');
 
@@ -161,7 +162,7 @@ const probe = `curl -sv http://your-mac.local:54330/
   <h2>Still stuck</h2>
 
   <p>
-    <a href="https://github.com/thatcube/hozz/issues">Open an issue</a>. Logs omit Health values,
+    <a href={`${GITHUB_URL}/issues`}>Open an issue</a>. Logs omit Health values,
     credentials and destination secrets.
   </p>
 </DocsLayout>

@@ -1,7 +1,27 @@
 export const SITE = 'https://hozz.brando.page';
-export const GITHUB_URL = 'https://github.com/thatcube/hozz';
-export const DONATE_URL = 'https://github.com/sponsors/thatcube';
-export const LICENSE_URL = 'https://github.com/thatcube/hozz/blob/main/LICENSE';
+export const GITHUB_URL = 'https://github.com/brandomoore/Hozz';
+export const DONATE_URL = 'https://github.com/sponsors/brandomoore';
+export const LICENSE_URL = `${GITHUB_URL}/blob/main/LICENSE`;
+
+/** Public beta availability verified on 2026-09-22; not store releases. */
+export const BETA_VERSION = '0.1.0-beta.1';
+export const BETA_TAG = `v${BETA_VERSION}`;
+export const RELEASE_URL = `${GITHUB_URL}/releases/tag/${BETA_TAG}`;
+export const DOWNLOADS = {
+  apple: {
+    href: 'https://testflight.apple.com/join/y7K4DAdF',
+    requires: 'iOS/iPadOS 17+',
+  },
+  mac: {
+    href: `${GITHUB_URL}/releases/download/${BETA_TAG}/Hozz-0.1.0-1-mac.dmg`,
+    requires: 'macOS 14+',
+  },
+  android: {
+    href: `${GITHUB_URL}/releases/download/${BETA_TAG}/hozz-0.1.0-beta.1-10001-signed.apk`,
+    requires: 'Android 9+ (API 28+)',
+  },
+} as const;
+export const OPERATING_SYSTEMS = ['iOS 17+', 'iPadOS 17+', 'macOS 14+', 'Android 9+'];
 
 /**
  * Hozz colours data by what the data is about. These hues are the site's whole
@@ -211,13 +231,13 @@ export const PROMISES = [
   { category: 'activity' as CategoryKey, title: 'No account', body: 'No sign-in.' },
   { category: 'mobility' as CategoryKey, title: 'No analytics', body: 'No telemetry, ads or remote crash reports.' },
   { category: 'respiratory' as CategoryKey, title: 'No hosted relay', body: 'No Hozz server in the middle.' },
-  { category: 'sleep' as CategoryKey, title: 'No default destination', body: 'Nothing leaves until you add one.' },
-  { category: 'mind' as CategoryKey, title: 'Credentials on device', body: 'Destination keys stay in the device Keychain.' },
+  { category: 'sleep' as CategoryKey, title: 'No default destination', body: 'Nothing is sent by default.' },
+  { category: 'mind' as CategoryKey, title: 'Credentials on device', body: 'Destination credentials stay on device.' },
 ];
 
-/** Early alpha: it works, and coverage is partial. Both halves are the truth. */
+/** Beta: Apple Health export, a Mac receiver, and an Android archive preview. */
 export const WORKING = [
-  'Automatic export to six destinations',
+  'Apple Health export to six destinations',
   'Resumable manual export',
   'NDJSON, SQLite, JSON, CSV, Markdown and GPX',
   'ECG waveforms, audiograms, routes and moods',
@@ -225,7 +245,7 @@ export const WORKING = [
   'Mac app: receives, stores, charts',
   'Read-only MCP server for assistants',
   'Shortcuts and a home-screen widget',
-  '520 XCTest tests',
+  'Android preview: opens Hozz NDJSON/ZIP',
 ];
 
 export const NOT_YET = [
@@ -234,7 +254,7 @@ export const NOT_YET = [
   'Writing anything back into Apple Health, ever',
   'Handover between two devices',
   'Accessibility and localisation pass',
-  'App Store release',
+  'App Store or Google Play release',
 ];
 
 /** Question-shaped, so the answers can be marked up as an FAQPage. */
@@ -258,6 +278,10 @@ export const FAQ = [
   {
     q: 'Can Hozz put data back into Apple Health?',
     a: 'No. Importing would replace the original source with Hozz and could duplicate records.',
+  },
+  {
+    q: 'Does Android read Apple Health?',
+    a: 'No. Android opens Hozz NDJSON/ZIP archives. Health Connect writes are experimental, opt-in and require Android 14+.',
   },
   {
     q: 'Why is there no progress percentage?',

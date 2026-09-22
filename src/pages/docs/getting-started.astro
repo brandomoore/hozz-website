@@ -4,11 +4,12 @@ import Callout from '../../components/docs/Callout.astro';
 import Code from '../../components/docs/Code.astro';
 import { page } from '../../data/docs-nav';
 import { COUNTS, REQUIREMENTS, spell } from '../../data/docs';
+import { BETA_TAG, DOWNLOADS, GITHUB_URL, RELEASE_URL } from '../../data/site';
 
 const entry = page('/docs/getting-started/');
 
-const build = `git clone https://github.com/thatcube/hozz.git
-cd hozz
+const build = `git clone --branch ${BETA_TAG} --depth 1 ${GITHUB_URL}.git
+cd Hozz
 
 # Signing lives in a gitignored Local.xcconfig:
 echo "DEVELOPMENT_TEAM = YOURTEAMID" > Local.xcconfig
@@ -19,31 +20,48 @@ tools/device-build.sh`;
 
 <DocsLayout page={entry}>
   <p>
-    The iPhone app reads Apple Health. The optional Mac app receives, charts and serves that data to
-    assistants.
+    Hozz is in <strong>beta</strong>, not released on the App Store or Google Play.
   </p>
 
-  <h2>1. Install it</h2>
+  <h2 id="downloads">Downloads</h2>
 
+  <ul>
+    <li>
+      <strong>iPhone &amp; iPad:</strong> <a href={DOWNLOADS.apple.href}>Join TestFlight</a>.{' '}
+      {DOWNLOADS.apple.requires}. Approved external beta v0.1.0 (build 1).
+    </li>
+    <li>
+      <strong>Mac:</strong> <a href={DOWNLOADS.mac.href}>Download the DMG</a>.{' '}
+      {DOWNLOADS.mac.requires}; universal, signed and notarized. Drag Hozz to Applications,
+      eject the disk image, then launch.{' '}
+      <a href="/docs/destinations/mac/#authentication">Trusted LAN only</a>.
+    </li>
+    <li>
+      <strong>Android preview:</strong> <a href={DOWNLOADS.android.href}>Download the signed APK</a>.{' '}
+      {DOWNLOADS.android.requires}.
+    </li>
+  </ul>
   <p>
-    Hozz is early alpha and <strong>not in the App Store</strong>. Build it with Xcode {
-      REQUIREMENTS.xcode
-    }+ and{' '}
-    <a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a> {REQUIREMENTS.xcodegen} or newer.
+    <a href={RELEASE_URL}>Release notes, checksums and demo</a>.{' '}
+    <a href={`${GITHUB_URL}/blob/${BETA_TAG}/docs/beta-testing.md`}>Beta testing guide</a>.
   </p>
 
-  <Code caption="Terminal" code={build} />
-
-  <p><code>tools/mac-build.sh</code> builds the Mac app.</p>
-
-  <Callout kind="note" title="One thing that will bite you on a device build">
+  <h2>Android: open an archive</h2>
+  <p>
+    Android cannot read Apple Health. Open a Hozz NDJSON or ZIP archive; archive-only mode
+    preserves all types.
+  </p>
+  <Callout kind="warn" title="Health Connect writes are experimental">
     <p>
-      Device builds need the App Group <code>group.com.thatcube.Hozz</code> in your developer
-      profile. Simulator builds do not.
+      Writes require explicit opt-in and Android 14+. There is no Google Play policy approval.
+      Steps, distance, energy and ungrouped sleep remain archive-only. Clinical extraction is disabled.
     </p>
   </Callout>
+  <p><a href={`${GITHUB_URL}/blob/${BETA_TAG}/docs/android-beta.md`}>Android beta guide</a>.</p>
 
-  <h2>2. Give it Health access</h2>
+  <h2>iPhone and iPad: export Apple Health</h2>
+
+  <h3>1. Give it Health access</h3>
 
   <p>
     Grant any subset. Change it later in{' '}
@@ -56,7 +74,7 @@ tools/device-build.sh`;
     </p>
   </Callout>
 
-  <h2>3. Pick a destination</h2>
+  <h3>2. Pick a destination</h3>
 
   <p>
     Nothing leaves until you add and confirm a destination.
@@ -72,12 +90,10 @@ tools/device-build.sh`;
     Health data.
   </p>
 
-  <h2>4. Run the first export</h2>
-
-  <h3>Automatic sync</h3>
+  <h3>3. Run the first export</h3>
 
   <p>
-    Automatic sync works through history in bounded batches, sharing each pass across selected types.
+    <strong>Automatic sync</strong> works through history in bounded batches, sharing each pass across selected types.
   </p>
 
   <p>
@@ -92,12 +108,25 @@ tools/device-build.sh`;
     </p>
   </Callout>
 
-  <h3>Manual export</h3>
-
   <p>
     <strong>Export</strong> builds a historical NDJSON, CSV, JSON, SQLite, Markdown or GPX file.
     Interrupted exports resume from their last durable checkpoint.
   </p>
 
   <p>Manual export is independent of automatic destinations.</p>
+
+  <h2>Build from source instead</h2>
+  <details>
+    <summary>Apple builds with Xcode</summary>
+    <p>
+      Use Xcode {REQUIREMENTS.xcode}+ and{' '}
+      <a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a> {REQUIREMENTS.xcodegen} or newer.
+    </p>
+    <Code caption="Terminal" code={build} />
+    <p><code>tools/mac-build.sh</code> builds the Mac app.</p>
+    <p>
+      Device builds need the App Group <code>group.com.thatcube.Hozz</code> in your developer
+      profile. Simulator builds do not.
+    </p>
+  </details>
 </DocsLayout>

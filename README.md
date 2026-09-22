@@ -1,9 +1,12 @@
 # hozz-website
 
-Marketing site for **[Hozz](https://github.com/thatcube/hozz)** — an open-source
+Marketing site for **[Hozz](https://github.com/brandomoore/Hozz)** — an open-source
 app that moves health data between places and platforms you use.
 
 Live at **[hozz.brando.page](https://hozz.brando.page)**.
+
+[Beta downloads and setup](https://hozz.brando.page/docs/getting-started/#downloads):
+TestFlight for iPhone/iPad, a Mac DMG, and an Android archive preview.
 
 ## Stack
 
@@ -34,9 +37,9 @@ npm run preview  # preview the production build locally
 
 ## Deploy
 
-CI (`.github/workflows/site.yml`) runs the checks on every push and deploys the
-live site from `main` once they pass. It needs one repository secret,
-`CLOUDFLARE_API_TOKEN` (the account id in `wrangler.jsonc` is not secret).
+Cloudflare's Git-connected Workers Builds publishes `main`, using `.nvmrc` for
+Node. No `NODE_VERSION` override or repository deployment secret is needed.
+GitHub Actions runs the site's validation checks.
 
 To publish by hand:
 
@@ -66,7 +69,7 @@ The site and the app live in separate repos, so the facts on the page can drift
 from the app's source. Three checks guard against that, and all three run in CI:
 
 ```bash
-npm run verify:facts     # reads enums out of thatcube/hozz's Swift and fails on disagreement
+npm run verify:facts     # reads enums out of brandomoore/Hozz's Swift and fails on disagreement
 npm run build
 npm run verify:links     # dead internal links and anchors, against the build
 npm run preview &        # then, against a served build:
@@ -84,7 +87,7 @@ SHOOT_BASE=http://localhost:4321 npm run verify:layout   # overflow, tap targets
 <p align="center"><b>More open source</b></p>
 
 <p align="center">
-  <a href="https://github.com/thatcube/hozz" title="Hozz — Apple Health, exported to storage you own"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thatcube/brando/main/logos/lockups/hozz-dark.svg" /><img src="https://raw.githubusercontent.com/thatcube/brando/main/logos/lockups/hozz-light.svg" height="40" alt="Hozz" /></picture></a>
+  <a href="https://github.com/brandomoore/Hozz" title="Hozz — Move health data between your places and platforms"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thatcube/brando/main/logos/lockups/hozz-dark.svg" /><img src="https://raw.githubusercontent.com/thatcube/brando/main/logos/lockups/hozz-light.svg" height="40" alt="Hozz" /></picture></a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/thatcube/Mozz" title="Mozz — Your music, wherever it lives"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thatcube/brando/main/logos/lockups/mozz-dark.svg" /><img src="https://raw.githubusercontent.com/thatcube/brando/main/logos/lockups/mozz-light.svg" height="40" alt="Mozz" /></picture></a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

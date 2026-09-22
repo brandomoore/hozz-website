@@ -4,6 +4,7 @@ import Callout from '../../../components/docs/Callout.astro';
 import Code from '../../../components/docs/Code.astro';
 import DeviceConstraints from '../../../components/docs/DeviceConstraints.astro';
 import { page } from '../../../data/docs-nav';
+import { DOWNLOADS } from '../../../data/site';
 
 const entry = page('/docs/destinations/mac/');
 
@@ -40,6 +41,10 @@ curl http://your-mac.local:54330/
     <li>
       <h3>Open Hozz on the Mac</h3>
       <p>
+        <a href={DOWNLOADS.mac.href}>Download the signed, notarized DMG</a> ({DOWNLOADS.mac.requires}).
+        Drag Hozz to Applications, eject the disk image, then launch.
+      </p>
+      <p>
         It listens on <strong>54330</strong> and advertises <code>_hozz._tcp</code>.
       </p>
     </li>
@@ -73,6 +78,13 @@ curl http://your-mac.local:54330/
   </ol>
 
   <h2>Authentication</h2>
+
+  <Callout kind="warn" title="Trusted local networks only">
+    <p>
+      The receiver uses HTTP, not HTTPS. Its token authenticates deliveries but does not encrypt
+      them. Keep it on a trusted LAN; do not expose it to the internet.
+    </p>
+  </Callout>
 
   <p>
     Deliveries require an <code>Authorization</code> token. <code>GET /</code> and{' '}

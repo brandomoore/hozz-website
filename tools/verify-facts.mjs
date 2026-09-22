@@ -136,7 +136,7 @@ async function load(name) {
   if (localRepo) {
     return readFile(join(localRepo.replace(/^~/, process.env.HOME), path), 'utf8');
   }
-  const url = `https://raw.githubusercontent.com/thatcube/hozz/${ref}/${path}`;
+  const url = `https://raw.githubusercontent.com/brandomoore/Hozz/${ref}/${path}`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`${url} → HTTP ${response.status}`);
@@ -170,7 +170,7 @@ function enumCases(source, name) {
 console.log(
   localRepo
     ? `Checking the docs against ${localRepo}\n`
-    : `Checking the docs against thatcube/hozz@${ref}\n`
+    : `Checking the docs against brandomoore/Hozz@${ref}\n`
 );
 
 // --- The site's own address ------------------------------------------------
@@ -412,7 +412,7 @@ try {
     'Health is asked for read access only',
     manualExporter,
     'toShare: nil',
-    'the privacy page says Hozz never requests permission to write to Health'
+    'the privacy page says Hozz never requests permission to write to Apple Health'
   );
 
   absent(

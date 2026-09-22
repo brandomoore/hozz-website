@@ -12,7 +12,7 @@ import '../styles/docs.css';
 import SiteHeader from '../components/site/SiteHeader.astro';
 import SiteFooter from '../components/site/SiteFooter.astro';
 import { DOC_SECTIONS, neighbours, sectionOf, type DocPage } from '../data/docs-nav';
-import { SITE } from '../data/site';
+import { SITE, OPERATING_SYSTEMS, BETA_VERSION } from '../data/site';
 
 interface Props {
   /** The page's own entry, so nothing is written down twice. */
@@ -128,7 +128,8 @@ const structured = {
     '@type': 'SoftwareApplication',
     name: 'Hozz',
     applicationCategory: 'HealthApplication',
-    operatingSystem: 'iOS, macOS',
+    operatingSystem: OPERATING_SYSTEMS,
+    softwareVersion: BETA_VERSION,
   },
   author: { '@type': 'Person', name: 'Brandon Moore' },
   publisher: { '@type': 'Person', name: 'Brandon Moore' },

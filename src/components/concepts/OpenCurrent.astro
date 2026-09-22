@@ -14,7 +14,7 @@ import SiteFooter from '../site/SiteFooter.astro';
 import {
   SITE,
   GITHUB_URL,
-  DONATE_URL,
+  DOWNLOADS,
   CATEGORIES,
   STREAM_LANES,
   STEPS,
@@ -59,10 +59,10 @@ const categorySamples = CATEGORIES.map((category) => ({
             <p class="eyebrow">Health data, moved</p>
             <h1 id="hero-title">Move your health data<br /><em>where you use it.</em></h1>
             <p class="hero-lede">
-              Hozz reads Apple Health on iPhone and sends it to your Mac or destinations you choose.
+              Export Apple Health to destinations you choose, or open Hozz archives on Android.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#how">How it works</a>
+              <a class="button button-primary" href="/docs/getting-started/#downloads">Get the beta</a>
               <a class="button button-quiet" href={GITHUB_URL}>Source</a>
             </div>
             <p class="hero-note">
@@ -162,7 +162,7 @@ const categorySamples = CATEGORIES.map((category) => ({
         <div class="shell">
           <div class="section-heading split-heading">
             <div>
-              <p class="eyebrow">What Hozz can read</p>
+              <p class="eyebrow">Apple Health on iPhone &amp; iPad</p>
               <h2 id="data-title">Not a health score.<br />The <em>records themselves.</em></h2>
             </div>
             <p class="section-lede">
@@ -195,7 +195,7 @@ const categorySamples = CATEGORIES.map((category) => ({
       <section class="section destinations-section" id="destinations" aria-labelledby="destinations-title">
         <div class="shell">
           <div class="section-heading">
-            <p class="eyebrow">Six destinations</p>
+            <p class="eyebrow">Six export destinations</p>
             <h2 id="destinations-title">Let each record<br /><em>land where you choose.</em></h2>
             <p class="section-lede">
               Each destination has its own types, schedule and queue position.
@@ -225,7 +225,7 @@ const categorySamples = CATEGORIES.map((category) => ({
               <h2 id="formats-title">Useful now.<br /><em>Readable later.</em></h2>
             </div>
             <p class="section-lede">
-              Pick the shape your next tool needs. Lossy formats say what they drop.
+              For Apple Health exports. Lossy formats say what they drop.
             </p>
           </div>
 
@@ -366,11 +366,11 @@ const categorySamples = CATEGORIES.map((category) => ({
         <div class="shell">
           <div class="status-heading">
             <div>
-              <p class="eyebrow">Project state · early alpha</p>
+              <p class="eyebrow">Project state · beta</p>
               <h2 id="status-title">Working now.<br /><em>Coverage is partial.</em></h2>
             </div>
             <p>
-              Early alpha. Not in the App Store.
+              iPhone/iPad, Mac and Android preview. Not an App Store or Google Play release.
             </p>
           </div>
           <div class="status-columns">
@@ -412,8 +412,9 @@ const categorySamples = CATEGORIES.map((category) => ({
           <p class="eyebrow">Open source · GPL-3.0</p>
           <h2 id="closing-title">Your history.<br /><em>Your place to keep it.</em></h2>
           <div class="hero-actions">
-            <a class="button button-primary" href={GITHUB_URL}>Repository ↗</a>
-            <a class="button button-quiet" href={DONATE_URL}>Sponsor</a>
+            <a class="button button-primary" href={DOWNLOADS.apple.href}>Join TestFlight</a>
+            <a class="button button-quiet" href={DOWNLOADS.mac.href}>Download Mac DMG</a>
+            <a class="button button-quiet" href={DOWNLOADS.android.href}>Android preview APK</a>
           </div>
         </div>
       </section>

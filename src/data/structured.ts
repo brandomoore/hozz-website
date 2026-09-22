@@ -1,4 +1,7 @@
-import { SITE, GITHUB_URL, LICENSE_URL, FAQ, FORMATS } from './site';
+import {
+  SITE, GITHUB_URL, LICENSE_URL, FAQ, FORMATS,
+  BETA_VERSION, RELEASE_URL, DOWNLOADS, OPERATING_SYSTEMS,
+} from './site';
 
 /* Shared by `/` and `/w/w12/` so the two can never describe the product
    differently to a crawler. Every value is drawn from site.ts. */
@@ -24,7 +27,7 @@ export const structuredData = {
       '@id': `${SITE}/#person`,
       name: 'Brandon Moore',
       url: SITE,
-      sameAs: ['https://github.com/thatcube'],
+      sameAs: ['https://github.com/brandomoore'],
     },
     {
       '@type': 'SoftwareApplication',
@@ -32,16 +35,19 @@ export const structuredData = {
       name: 'Hozz',
       url: SITE,
       applicationCategory: 'HealthApplication',
-      operatingSystem: 'iOS, macOS',
+      operatingSystem: OPERATING_SYSTEMS,
+      softwareVersion: BETA_VERSION,
+      downloadUrl: Object.values(DOWNLOADS).map((download) => download.href),
+      releaseNotes: RELEASE_URL,
       codeRepository: GITHUB_URL,
       license: LICENSE_URL,
       author: { '@id': `${SITE}/#person` },
       sameAs: [GITHUB_URL],
       description:
-        'Reads Apple Health on iPhone and sends it to your Mac or destinations you choose.',
+        'Beta for Apple Health export on iPhone/iPad, a Mac receiver, and an Android preview that opens Hozz archives.',
       /* Derived, never typed: if a format is added or dropped in site.ts the
          markup follows, so it cannot claim an export Hozz does not do. */
-      featureList: FORMATS.map((format) => `${format.name} export`),
+      featureList: FORMATS.map((format) => `Apple Health ${format.name} export`),
     },
     {
       '@type': 'FAQPage',

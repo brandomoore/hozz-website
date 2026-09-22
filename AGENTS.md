@@ -11,8 +11,8 @@ watch you, so the site must not either.
 - **No cookies and no client-side storage.**
 - **Claims must be checkable.** The HealthKit identifiers on the page are real
   API names. Do not invent metrics, statistics, user counts, or testimonials.
-- **No fabricated app screenshots.** Hozz is pre-alpha and has no shipped UI. A
-  mocked-up screenshot would be the one dishonest thing on a site about honesty.
+- **No fabricated app screenshots.** Use only verified captures of the beta.
+  A mocked-up screenshot would be dishonest on a site about honesty.
 - **Keep the status section accurate.** If a milestone in `src/data/site.ts` no
   longer matches the app repository, fix the data, not the wording.
 

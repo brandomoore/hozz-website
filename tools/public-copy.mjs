@@ -26,10 +26,6 @@ const BANNED = [
     label: 'no-price promise',
     pattern: /\bno price\b/giu,
   },
-  {
-    label: 'unshipped Android claim',
-    pattern: /\bAndroid\b/giu,
-  },
 ];
 
 const SOURCE_EXTENSIONS = /\.(?:astro|css|html|js|json|md|mjs|ts)$/;

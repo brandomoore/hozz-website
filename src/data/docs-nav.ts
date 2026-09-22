@@ -46,10 +46,10 @@ export const DOC_SECTIONS: DocSection[] = [
         href: '/docs/getting-started/',
         heading: 'Getting started',
         nav: 'Getting started',
-        title: 'Getting started with Hozz — export your Apple Health data',
+        title: 'Download the Hozz beta — iPhone, iPad, Mac and Android',
         description:
-          'Build Hozz, grant Health access, choose a destination, and run your first export.',
-        lede: 'Build it, grant access, choose a destination and export.',
+          'Install the TestFlight beta, Mac DMG or Android preview. Export Apple Health or open Hozz archives.',
+        lede: 'Install the beta, then choose your path.',
       },
       {
         href: '/privacy/',
@@ -57,7 +57,7 @@ export const DOC_SECTIONS: DocSection[] = [
         nav: 'Privacy',
         title: 'Hozz privacy — what leaves your device, and when',
         description:
-          'What leaves your iPhone, where credentials live, what Hozz logs, and where its control ends.',
+          'What leaves your device, Apple Health read access, and experimental opt-in Android Health Connect writes.',
         lede: 'What leaves your device, when, and where.',
       },
       {

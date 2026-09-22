@@ -23,7 +23,7 @@ const entry = page('/privacy/');
   <h2>Nothing leaves by default</h2>
 
   <p>
-    <strong>Hozz sends Health data only to destinations you add and confirm.</strong> There is no
+    <strong>Apple Health exports go only to destinations you add and confirm.</strong> There is no
     hosted relay or default destination.
   </p>
 
@@ -37,7 +37,7 @@ const entry = page('/privacy/');
   <h2>Credentials stay on device</h2>
 
   <p>
-    Destination tokens, API keys and MQTT passwords use the device Keychain setting{' '}
+    On Apple devices, destination tokens, API keys and MQTT passwords use the Keychain setting{' '}
     <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>. They do not sync or enter backups.
   </p>
 
@@ -54,7 +54,7 @@ const entry = page('/privacy/');
   <h2>Storage</h2>
 
   <p>
-    The phone stores cursors, coverage, destination settings, receipts and staged batches—not a
+    The iPhone/iPad app stores cursors, coverage, destination settings, receipts and staged batches—not a
     permanent Health mirror. Its database uses <code>completeUnlessOpen</code> file protection and is
     excluded from backups.
   </p>
@@ -67,16 +67,23 @@ const entry = page('/privacy/');
   <h2>Logs omit data and secrets</h2>
 
   <p>
-    Unified logs contain status and failure descriptions, never sample values, credentials or
+    Apple unified logs contain status and failure descriptions, never sample values, credentials or
     destination secrets. The Mac may log its own local addresses during pairing. Rejected response
     bodies are discarded because they may echo a Health record.
   </p>
 
-  <h2>Health access is read-only</h2>
+  <h2>Apple Health access is read-only</h2>
 
   <p>
-    Hozz requests read access when you first export or sync. It never requests write access and never
-    writes to Apple Health. <a href="/docs/data-coverage/#what-hozz-will-never-do">Why not.</a>
+    On iPhone/iPad, Hozz requests read access when you first export or sync. It never requests
+    Apple Health write access. <a href="/docs/data-coverage/#what-hozz-will-never-do">Why not.</a>
+  </p>
+
+  <p>
+    Android opens Hozz NDJSON/ZIP archives, not Apple Health. Archive-only mode preserves all types.
+    Experimental Health Connect writes require explicit opt-in and Android 14+; there is no
+    Google Play policy approval.{' '}
+    <a href="/docs/getting-started/#android-open-an-archive">Android limits</a>.
   </p>
 
   <h2>Control ends at your destination</h2>
@@ -90,7 +97,7 @@ const entry = page('/privacy/');
   <h2>This website</h2>
 
   <p>
-    Static files on Cloudflare Pages. No cookies, analytics, storage or third-party resources.
+    Static files on Cloudflare Workers. No cookies, analytics, storage or third-party resources.
     Cloudflare keeps host logs under its policy; external links use the destination site's policy.
   </p>
 

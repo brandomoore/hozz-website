@@ -13,7 +13,7 @@
 /** The app-repo commit these facts were last verified against. */
 export const SOURCE_REF = 'b2216a7ae3e2998d1f1ad84e547c5ef86b2a4711';
 
-export const APP_REPO = 'https://github.com/thatcube/hozz';
+export const APP_REPO = 'https://github.com/brandomoore/Hozz';
 
 /* -------------------------------------------------------------------------
    Destinations

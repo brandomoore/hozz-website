@@ -8,13 +8,12 @@
  */
 import DocsLayout from '../../layouts/DocsLayout.astro';
 import { type DocPage } from '../../data/docs-nav';
-import { GITHUB_URL } from '../../data/site';
 
 const page: DocPage = {
   href: '/docs/',
   nav: 'Documentation',
   heading: 'Hozz documentation',
-  title: 'Hozz documentation — export Apple Health data to somewhere you own',
+  title: 'Hozz beta documentation — downloads, exports and archives',
   description:
     'Set up Hozz, choose a destination, understand its formats, and troubleshoot exports.',
   lede: 'Set up, send, inspect and troubleshoot.',
@@ -25,8 +24,8 @@ const paths = [
   {
     href: '/docs/getting-started/',
     tag: 'Start here',
-    title: 'Run your first export',
-    body: 'Build, grant access, choose a destination, export.',
+    title: 'Get the beta',
+    body: 'TestFlight, Mac DMG and Android preview.',
   },
   {
     href: '/docs/destinations/',
@@ -51,9 +50,8 @@ const paths = [
 
 <DocsLayout page={page}>
   <p>
-    Hozz reads Apple Health on iPhone and sends it only to destinations you add. It is{' '}
-    <strong>early alpha</strong>, not in the App Store, and documented against{' '}
-    <a href={GITHUB_URL}>its source</a>.
+    The <a href="/docs/getting-started/#downloads">beta</a> exports Apple Health on iPhone/iPad,
+    receives it on Mac, and opens Hozz archives on Android. Export guides cover Apple devices.
   </p>
 
   <h2>Where to start</h2>
