@@ -8,6 +8,7 @@
  * Layout.astro — two global stylesheets would fight.
  */
 import '../../styles/foundation.css';
+import { Icon } from 'astro-icon/components';
 import Mark from '../mark/logos/c45.astro';
 import SiteHeader from '../site/SiteHeader.astro';
 import SiteFooter from '../site/SiteFooter.astro';
@@ -62,17 +63,35 @@ const categorySamples = CATEGORIES.map((category) => ({
               Export Apple Health to destinations you choose, or open Hozz archives on Android.
             </p>
             <div class="download-rail" id="downloads" aria-label="Download Hozz">
-              <a class="download-option download-option-apple" href={DOWNLOADS.apple.href}>
-                <strong>iPhone / iPad · TestFlight</strong>
-                <span>Beta 0.1.0 (1) · {DOWNLOADS.apple.requires}</span>
+              <a class="download-option" href={DOWNLOADS.apple.href}>
+                <span class="download-icon">
+                  <Icon name="ph:apple-logo-fill" width={28} height={28} aria-hidden="true" />
+                </span>
+                <span class="download-copy">
+                  <strong>iPhone / iPad · TestFlight</strong>
+                  <span class="download-detail">Beta 0.1.0 (1) · {DOWNLOADS.apple.requires}</span>
+                </span>
+                <Icon class="download-action" name="ph:arrow-up-right" width={18} height={18} aria-hidden="true" />
               </a>
-              <a class="download-option download-option-mac" href={DOWNLOADS.mac.href}>
-                <strong>Mac · Download DMG</strong>
-                <span>Signed &amp; notarized · {DOWNLOADS.mac.requires}</span>
+              <a class="download-option" href={DOWNLOADS.mac.href}>
+                <span class="download-icon">
+                  <Icon name="ph:desktop-duotone" width={28} height={28} aria-hidden="true" />
+                </span>
+                <span class="download-copy">
+                  <strong>Mac · Download DMG</strong>
+                  <span class="download-detail">Signed &amp; notarized · {DOWNLOADS.mac.requires}</span>
+                </span>
+                <Icon class="download-action" name="ph:download-simple" width={18} height={18} aria-hidden="true" />
               </a>
-              <a class="download-option download-option-android" href={DOWNLOADS.android.href}>
-                <strong>Android · Download APK</strong>
-                <span>Preview · {DOWNLOADS.android.requires}</span>
+              <a class="download-option" href={DOWNLOADS.android.href}>
+                <span class="download-icon">
+                  <Icon name="ph:android-logo-duotone" width={28} height={28} aria-hidden="true" />
+                </span>
+                <span class="download-copy">
+                  <strong>Android · Download APK</strong>
+                  <span class="download-detail">Preview · {DOWNLOADS.android.requires}</span>
+                </span>
+                <Icon class="download-action" name="ph:download-simple" width={18} height={18} aria-hidden="true" />
               </a>
             </div>
             <div class="hero-secondary">
@@ -664,31 +683,35 @@ const categorySamples = CATEGORIES.map((category) => ({
   }
 
   .download-option {
-    --download-accent: var(--blue);
-    position: relative;
     display: grid;
-    gap: 0.12rem;
+    grid-template-columns: 2.75rem minmax(0, 1fr) 1.125rem;
+    align-items: center;
+    gap: 0.75rem;
     min-height: 4.25rem;
-    padding: 0.78rem 1rem 0.78rem 2.3rem;
-    overflow: hidden;
-    border: 1px solid color-mix(in srgb, var(--download-accent) 38%, var(--line));
+    padding: 0.6rem 0.85rem 0.6rem 0.6rem;
+    border: 1px solid var(--line);
     border-radius: 0.75rem;
-    background: color-mix(in srgb, white 82%, var(--download-accent) 18%);
-    box-shadow: 0 10px 24px rgba(19, 38, 56, 0.06);
+    background: color-mix(in srgb, var(--white) 82%, var(--mist));
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--ink) 4%, transparent);
     text-decoration: none;
-    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
   }
 
-  .download-option::before {
-    content: '';
-    position: absolute;
-    left: 1rem;
-    top: 1.18rem;
-    width: 0.56rem;
-    height: 0.56rem;
-    border-radius: 50%;
-    background: var(--download-accent);
-    box-shadow: 0 0 0 5px color-mix(in srgb, var(--download-accent) 12%, transparent);
+  .download-icon {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--blue-light);
+    border-radius: 0.6rem;
+    background: linear-gradient(145deg, var(--white), var(--blue-wash));
+    color: var(--blue-deep);
+  }
+
+  .download-copy {
+    display: grid;
+    gap: 0.18rem;
+    min-width: 0;
   }
 
   .download-option strong {
@@ -697,28 +720,21 @@ const categorySamples = CATEGORIES.map((category) => ({
     line-height: 1.3;
   }
 
-  .download-option span {
-    color: var(--ink-soft);
+  .download-detail {
+    color: var(--ink-muted);
     font-size: 0.78rem;
     line-height: 1.35;
   }
 
-  .download-option:hover {
-    transform: translateY(-2px);
-    border-color: var(--download-accent);
-    box-shadow: 0 14px 28px rgba(19, 38, 56, 0.1);
+  .download-action {
+    color: var(--blue-deep);
   }
 
-  .download-option-apple {
-    --download-accent: #dd6558;
-  }
-
-  .download-option-mac {
-    --download-accent: #4a8fc0;
-  }
-
-  .download-option-android {
-    --download-accent: #6c9f45;
+  .download-option:hover,
+  .download-option:focus-visible {
+    border-color: var(--blue);
+    background: var(--mist);
+    box-shadow: 0 5px 16px color-mix(in srgb, var(--ink) 8%, transparent);
   }
 
   .hero-secondary {
@@ -1729,7 +1745,6 @@ const categorySamples = CATEGORIES.map((category) => ({
 
     .download-option {
       min-height: 4.5rem;
-      padding-block: 0.85rem;
     }
 
     .hero-actions .button,
