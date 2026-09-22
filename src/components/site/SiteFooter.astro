@@ -83,6 +83,21 @@ const columns = atHome ? 3 : 2;
     </nav>
   </div>
 
+  {atHome && (
+    <details class="asset-credits">
+      <summary>Asset credits</summary>
+      <p>
+        The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the{' '}
+        <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons 3.0 Attribution License</a>.
+      </p>
+      <p>
+        <a href="https://commons.wikimedia.org/wiki/Special:Redirect/file/Android_robot.svg">Original Android robot SVG</a>{' '}
+        (retrieved 2026-09-22) · <a href="https://developer.android.com/distribute/marketing-tools/brand-guidelines">Google's brand guidelines</a>.
+        Proportions and colors unchanged.
+      </p>
+    </details>
+  )}
+
   <div class="base">
     <span>No cookies, analytics, storage, or third-party requests.</span>
     <code>beta</code>
@@ -97,6 +112,7 @@ const columns = atHome ? 3 : 2;
   }
 
   .columns,
+  .asset-credits,
   .base {
     width: min(100% - var(--gutter) * 2, var(--max));
     margin-inline: auto;
@@ -167,6 +183,44 @@ const columns = atHome ? 3 : 2;
   .repo :global(svg) {
     width: 1.15em;
     height: 1.15em;
+  }
+
+  .asset-credits {
+    margin-bottom: 1rem;
+    border: 0;
+    color: #dce8f0;
+    font-size: 0.78rem;
+  }
+
+  .asset-credits summary {
+    display: list-item;
+    width: fit-content;
+    min-height: 44px;
+    padding-block: 0.65rem;
+    color: inherit;
+    font: inherit;
+    list-style: disclosure-closed inside;
+    cursor: pointer;
+  }
+
+  .asset-credits[open] summary {
+    list-style-type: disclosure-open;
+  }
+
+  .asset-credits summary::-webkit-details-marker {
+    display: revert;
+  }
+
+  .asset-credits p {
+    max-width: 65ch;
+    margin: 0.5rem 0 0;
+    color: inherit;
+    line-height: 1.65;
+  }
+
+  .asset-credits a {
+    color: inherit;
+    text-underline-offset: 0.22em;
   }
 
   .base {

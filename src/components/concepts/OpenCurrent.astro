@@ -10,6 +10,9 @@
 import '../../styles/foundation.css';
 import { Icon } from 'astro-icon/components';
 import Mark from '../mark/logos/c45.astro';
+import DevicePair from '../platforms/DevicePair.astro';
+import Laptop from '../platforms/Laptop.astro';
+import AndroidRobot from '../platforms/AndroidRobot.astro';
 import SiteHeader from '../site/SiteHeader.astro';
 import SiteFooter from '../site/SiteFooter.astro';
 import {
@@ -66,7 +69,7 @@ const categorySamples = CATEGORIES.map((category) => ({
               <p class="download-label">Public beta</p>
               <a class="download-option" href={DOWNLOADS.apple.href} aria-label="Join Hozz TestFlight for iPhone and iPad">
                 <span class="download-icon">
-                  <Icon name="ph:apple-logo-fill" width={28} height={28} aria-hidden="true" />
+                  <DevicePair />
                 </span>
                 <span class="download-copy">
                   <strong>iPhone &amp; iPad</strong>
@@ -76,7 +79,7 @@ const categorySamples = CATEGORIES.map((category) => ({
               </a>
               <a class="download-option" href={DOWNLOADS.mac.href} aria-label="Download Hozz for Mac">
                 <span class="download-icon">
-                  <Icon name="ph:desktop-duotone" width={28} height={28} aria-hidden="true" />
+                  <Laptop />
                 </span>
                 <span class="download-copy">
                   <strong>Mac</strong>
@@ -86,7 +89,7 @@ const categorySamples = CATEGORIES.map((category) => ({
               </a>
               <a class="download-option" href={DOWNLOADS.android.href} aria-label="Download Hozz for Android">
                 <span class="download-icon">
-                  <Icon name="ph:android-logo-duotone" width={28} height={28} aria-hidden="true" />
+                  <AndroidRobot />
                 </span>
                 <span class="download-copy">
                   <strong>Android</strong>
