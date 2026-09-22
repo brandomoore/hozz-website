@@ -63,33 +63,34 @@ const categorySamples = CATEGORIES.map((category) => ({
               Export Apple Health to destinations you choose, or open Hozz archives on Android.
             </p>
             <div class="download-rail" id="downloads" aria-label="Download Hozz">
-              <a class="download-option" href={DOWNLOADS.apple.href}>
+              <p class="download-label">Public beta</p>
+              <a class="download-option" href={DOWNLOADS.apple.href} aria-label="Join Hozz TestFlight for iPhone and iPad">
                 <span class="download-icon">
                   <Icon name="ph:apple-logo-fill" width={28} height={28} aria-hidden="true" />
                 </span>
                 <span class="download-copy">
-                  <strong>iPhone / iPad · TestFlight</strong>
-                  <span class="download-detail">Beta 0.1.0 (1) · {DOWNLOADS.apple.requires}</span>
+                  <strong>iPhone &amp; iPad</strong>
+                  <span class="download-detail">TestFlight · {DOWNLOADS.apple.requires}</span>
                 </span>
                 <Icon class="download-action" name="ph:arrow-up-right" width={18} height={18} aria-hidden="true" />
               </a>
-              <a class="download-option" href={DOWNLOADS.mac.href}>
+              <a class="download-option" href={DOWNLOADS.mac.href} aria-label="Download Hozz for Mac">
                 <span class="download-icon">
                   <Icon name="ph:desktop-duotone" width={28} height={28} aria-hidden="true" />
                 </span>
                 <span class="download-copy">
-                  <strong>Mac · Download DMG</strong>
-                  <span class="download-detail">Signed &amp; notarized · {DOWNLOADS.mac.requires}</span>
+                  <strong>Mac</strong>
+                  <span class="download-detail">{DOWNLOADS.mac.requires}</span>
                 </span>
                 <Icon class="download-action" name="ph:download-simple" width={18} height={18} aria-hidden="true" />
               </a>
-              <a class="download-option" href={DOWNLOADS.android.href}>
+              <a class="download-option" href={DOWNLOADS.android.href} aria-label="Download Hozz for Android">
                 <span class="download-icon">
                   <Icon name="ph:android-logo-duotone" width={28} height={28} aria-hidden="true" />
                 </span>
                 <span class="download-copy">
-                  <strong>Android · Download APK</strong>
-                  <span class="download-detail">Preview · {DOWNLOADS.android.requires}</span>
+                  <strong>Android</strong>
+                  <span class="download-detail">Android 9+</span>
                 </span>
                 <Icon class="download-action" name="ph:download-simple" width={18} height={18} aria-hidden="true" />
               </a>
@@ -98,9 +99,6 @@ const categorySamples = CATEGORIES.map((category) => ({
               <a href="/docs/getting-started/">Install notes</a>
               <a href={GITHUB_URL}>GitHub</a>
             </div>
-            <p class="hero-note">
-              Public beta. Not released on the App Store or Google Play.
-            </p>
           </div>
 
           <figure class="record-field" aria-labelledby="record-caption">
@@ -525,6 +523,7 @@ const categorySamples = CATEGORIES.map((category) => ({
 
   code,
   .eyebrow,
+  .download-label,
   .step-number {
     font-family: 'IBM Plex Mono', monospace;
   }
@@ -682,6 +681,14 @@ const categorySamples = CATEGORIES.map((category) => ({
     scroll-margin-top: 6rem;
   }
 
+  .download-label {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
   .download-option {
     display: grid;
     grid-template-columns: 2.75rem minmax(0, 1fr) 1.125rem;
@@ -785,13 +792,6 @@ const categorySamples = CATEGORIES.map((category) => ({
 
   .button-quiet:hover {
     background: white;
-  }
-
-  .hero-note {
-    max-width: 34rem;
-    margin: 0.8rem 0 0;
-    color: var(--ink-muted);
-    font-size: 0.83rem;
   }
 
   .record-field {
