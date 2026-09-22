@@ -10,7 +10,7 @@
  *
  * The rule it follows, in a sentence: the wordmark always takes you home, the
  * badge beside it says which part of the site you are in, and the right-hand
- * cluster is the places you can go that are not on this page.
+ * cluster keeps the primary download action visible beside secondary links.
  *
  * That is why the documentation header carries no "Home" link — the wordmark is
  * the way home on every site anyone has ever used, and it now behaves that way
@@ -30,7 +30,8 @@ interface Props {
    *
    * A brand element that does nothing when pressed was the complaint that
    * started this rewrite, and answering it with a link back to the page you are
-   * already reading would only move the problem.
+   * already reading would only move the problem. Download is the exception: on
+   * the homepage it jumps to the install choices, and elsewhere it returns there.
    */
   path?: string;
 }
@@ -86,6 +87,7 @@ const elsewhere = surface === 'home' ? [SURFACES.docs] : [];
     }
 
     <nav class="elsewhere" aria-label="Site">
+      <a class="download-link" href={atHome ? '#downloads' : '/#downloads'}>Download</a>
       {elsewhere.map((target) => <a href={target.href}>{target.label}</a>)}
       <a class="repo" href={GITHUB_URL} rel="noopener">
         <Icon name="ph:github-logo" aria-hidden="true" />
@@ -242,6 +244,21 @@ const elsewhere = surface === 'home' ? [SURFACES.docs] : [];
     text-underline-offset: 0.22em;
   }
 
+  .elsewhere .download-link {
+    min-height: 2.55rem;
+    padding-inline: 1rem;
+    border-radius: 999px;
+    background: var(--ink);
+    color: white;
+    font-weight: 600;
+  }
+
+  .elsewhere .download-link:hover {
+    background: #254159;
+    color: white;
+    text-decoration: none;
+  }
+
   /*
     It said "Source" in small capitals, which is this site's own convention for a
     machine fact — and the name of a website is not one. The mark is inlined at
@@ -267,6 +284,20 @@ const elsewhere = surface === 'home' ? [SURFACES.docs] : [];
 
     .bar {
       column-gap: 1.35rem;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .elsewhere {
+      gap: 0.7rem;
+    }
+
+    .elsewhere .download-link {
+      padding-inline: 0.9rem;
+    }
+
+    .on-home .repo {
+      display: none;
     }
   }
 </style>
