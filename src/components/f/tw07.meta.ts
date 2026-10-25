@@ -1,7 +1,7 @@
 export default {
   n: 'tw07',
   name: 'Spam',
-  app: 'twozz',
+  app: 'strozz',
   object: 'One emote tile, and the copy behind it',
   move: 'aperture',
   reading: 'eyes',

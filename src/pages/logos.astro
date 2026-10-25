@@ -31,9 +31,9 @@ const all = Object.entries(mods)
   })
   .sort((a, b) => a.slug.localeCompare(b.slug));
 
-/* Hozz marks are cNN; the Twozz/Strozz refresh lives alongside as tNN. */
+/* Hozz marks are cNN; the Strozz refresh lives alongside as tNN. */
 const items = all.filter((i) => i.slug.startsWith('c'));
-const twozz = all.filter((i) => i.slug.startsWith('t'));
+const strozz = all.filter((i) => i.slug.startsWith('t'));
 
 const SIZES = [96, 48, 28, 16];
 
@@ -46,14 +46,14 @@ const SELECTED = 'c45';
 const chosen = all.find((i) => i.slug === SELECTED);
 
 /**
- * The Twozz pick, on the same terms. Carrier earns it on the 28px row rather
+ * The Strozz pick, on the same terms. Carrier earns it on the 28px row rather
  * than the 150px one: the arcs stay legible when everything else in the set
  * collapses to a plain bubble, and the idea behind them — a voice falling off
  * across a room, struck around the off-frame speaker the tail points at — is
  * the only one here that is about live audio rather than about chat.
  */
-const TWOZZ_SELECTED = 't19';
-const twozzChosen = all.find((i) => i.slug === TWOZZ_SELECTED);
+const STROZZ_SELECTED = 't19';
+const strozzChosen = all.find((i) => i.slug === STROZZ_SELECTED);
 ---
 
 <!doctype html>
@@ -71,7 +71,7 @@ const twozzChosen = all.find((i) => i.slug === TWOZZ_SELECTED);
       <p class="eyebrow">Hozz · working file</p>
       <h1>{items.length} marks for the fourth sibling.</h1>
       <p class="lede">
-        Plozz is a TV, Mozz is a disc, Twozz is a speech bubble. Hozz has to
+        Plozz is a TV, Mozz is a disc, Strozz is a speech bubble. Hozz has to
         belong to that family without shouting like it — quieter, more
         translucent, more atmospheric. Every concept below competes on
         silhouette, palette, depth and light.
@@ -177,10 +177,10 @@ const twozzChosen = all.find((i) => i.slug === TWOZZ_SELECTED);
       {items.length === 0 && <p class="empty">No concepts yet.</p>}
 
       {
-        twozz.length > 0 && (
+        strozz.length > 0 && (
           <>
             <header class="band">
-              <h2>Twozz — a little more character</h2>
+              <h2>Strozz — a little more character</h2>
               <p>
                 The shipped mark is a purple speech bubble with the family face.
                 It works, but it says “chat” and nothing about live streams or
@@ -188,22 +188,22 @@ const twozzChosen = all.find((i) => i.slug === TWOZZ_SELECTED);
                 and try to give it something to remember.
               </p>
             </header>
-            {twozzChosen && (
+            {strozzChosen && (
               <section class="chosen">
                 <div class="chosen-art">
                   <div class="chosen-ground chosen-ground--light">
-                    <twozzChosen.Comp size={128} />
+                    <strozzChosen.Comp size={128} />
                   </div>
                   <div class="chosen-ground chosen-ground--dark">
-                    <twozzChosen.Comp size={128} />
+                    <strozzChosen.Comp size={128} />
                   </div>
                 </div>
                 <div class="chosen-note">
                   <p class="eyebrow">Selected</p>
                   <h2>
-                    {twozzChosen.meta.n} · {twozzChosen.meta.name}
+                    {strozzChosen.meta.n} · {strozzChosen.meta.name}
                   </h2>
-                  <p>{twozzChosen.meta.idea}</p>
+                  <p>{strozzChosen.meta.idea}</p>
                   <p class="chosen-keep">
                     Chosen on the 28px row, not the 150px one. Several below are
                     better looking at full size — t13 does something with
@@ -214,7 +214,7 @@ const twozzChosen = all.find((i) => i.slug === TWOZZ_SELECTED);
                 </div>
               </section>
             )}
-            {twozz.map((it) => {
+            {strozz.map((it) => {
               const C = it.Comp;
               const m = it.meta;
               return (

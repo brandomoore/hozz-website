@@ -1,4 +1,4 @@
-"""Generate t14: the shipped Twozz lighting story, told as proper glass."""
+"""Generate t14: the shipped Strozz lighting story, told as proper glass."""
 
 import sys
 from pathlib import Path
@@ -143,7 +143,7 @@ interface Props {{ size?: number }}
 const {{ size = 128 }} = Astro.props;
 ---
 
-<MarkFrame size={{size}} title="Twozz — Same Light">
+<MarkFrame size={{size}} title="Strozz — Same Light">
 {paths}
   <g fill="{FACE}" shape-rendering="crispEdges">
     {{facePathsAt({{ cx: 16, cy: 13, size: 'lg', smile: 'wide', gap: 2 }}).map((d) => (

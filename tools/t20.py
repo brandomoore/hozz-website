@@ -1,13 +1,13 @@
-"""Generate t20: a hue-shifting current inside the shipped Twozz silhouette.
+"""Generate t20: a hue-shifting current inside the shipped Strozz silhouette.
 
 Homework, rasterised at the native 32×32 grid:
 
 * Plozz spends eight tones by function: black structure, a grey aerial detail,
   three cyan case tones, and three nested screen-bevel tones.
 * Mozz spends eleven tones across the whole disc in directional red reflections.
-* Twozz spends five tones, but 438 pixels collapse into one purple field.
+* Strozz spends five tones, but 438 pixels collapse into one purple field.
 
-This keeps Twozz's proven speech-bubble silhouette and makes colour—not added
+This keeps Strozz's proven speech-bubble silhouette and makes colour—not added
 hardware, glass, roundness, or simulated depth—the new idea.
 """
 
@@ -180,7 +180,7 @@ paths = "\n".join(
  * hue itself is the event, and the curve continues behind the face and into the
  * tail like a live feed passing through the bubble.
  *
- * The silhouette is the shipped Twozz body, kept because it already reads
+ * The silhouette is the shipped Strozz body, kept because it already reads
  * instantly as chat. Its y2–24 body is 28 wide and symmetric about x=16; the
  * tail is exempt. The 10-wide lg face has matching parity. At gap 2 it spans
  * y8–18, leaving {AIR_ABOVE} rows of body air above and {AIR_BELOW} below.
@@ -196,7 +196,7 @@ interface Props {{ size?: number }}
 const {{ size = 128 }} = Astro.props;
 ---
 
-<MarkFrame size={{size}} title="Twozz — Phase Shift">
+<MarkFrame size={{size}} title="Strozz — Phase Shift">
 {paths}
   <g fill="{FACE}" shape-rendering="crispEdges">
     {{facePathsAt({{ cx: 16, cy: 13, size: 'lg', smile: 'wide', gap: 2 }}).map((d) => (

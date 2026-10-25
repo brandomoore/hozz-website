@@ -1,7 +1,7 @@
 export default {
   n: 'tw01',
   name: 'Aside',
-  app: 'twozz',
+  app: 'strozz',
   object: 'A speech bubble',
   move: 'continuation',
   reading: 'letters',

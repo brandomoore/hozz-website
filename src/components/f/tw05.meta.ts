@@ -1,7 +1,7 @@
 export default {
   n: 'tw05',
   name: 'On air',
-  app: 'twozz',
+  app: 'strozz',
   object: 'Lit ON AIR sign',
   move: 'aperture',
   reading: 'letters',

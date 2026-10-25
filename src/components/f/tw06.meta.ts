@@ -1,7 +1,7 @@
 export default {
   n: 'tw06',
   name: 'Broadcast beam',
-  app: 'twozz',
+  app: 'strozz',
   object: 'Fanning live broadcast beam',
   move: 'aperture',
   reading: 'letters',

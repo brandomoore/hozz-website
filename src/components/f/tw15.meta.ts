@@ -1,7 +1,7 @@
 export default {
   n: 'tw15',
   name: 'Jaw',
-  app: 'twozz',
+  app: 'strozz',
   object: 'A head that is not a circle',
   move: 'continuation',
   reading: 'eyes',

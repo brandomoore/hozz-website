@@ -1,4 +1,4 @@
-"""t11 — Twozz, the direct sibling of c45 · Ripple, Lens.
+"""t11 — Strozz, the direct sibling of c45 · Ripple, Lens.
 
 c45 was rasterised to the 32 grid and measured before anything was drawn here:
 
@@ -52,7 +52,7 @@ entirely from the right. Interior widths after the keyline run 6-5-3.
 
 **The hue.** Purple cannot be anchored where blue was — a near-white rim stops
 being Twitch — so the ramp is anchored by its *middle*: stop 3 of 6 is #8f52f6,
-the purple Twozz already ships, exactly. #8f52f6 is already at C 94 and sRGB has
+the purple Strozz already ships, exactly. #8f52f6 is already at C 94 and sRGB has
 nothing more saturated at that lightness, so the per-step chroma rise is taken as
 far as the gamut allows and the rest of the ΔE budget goes to lightness. The step
 *size* is what the eye reads, and that is matched.
@@ -77,7 +77,7 @@ NAME = 'Lens'
 # Colour. Everything below is CIE Lab, because "the same subtlety of step" is a
 # perceptual claim and hex arithmetic cannot check it.
 # ---------------------------------------------------------------------------
-BRAND = '#8f52f6'           # Twozz, as shipped
+BRAND = '#8f52f6'           # Strozz, as shipped
 KEY = '#1b0b36'             # the near-black of the hue, as Mozz does it
 INK = '#ffffff'             # the family's ink on a coloured container
 STEPS = 6
@@ -493,7 +493,7 @@ interface Props {{ size?: number }}
 const {{ size = 128 }} = Astro.props;
 ---
 
-<MarkFrame size={{size}} title="Twozz — {NAME}">
+<MarkFrame size={{size}} title="Strozz — {NAME}">
 {rows_svg}
   <g fill="{INK}" shape-rendering="crispEdges">
     {{facePathsAt({{ cx: 16, cy: {CY}, size: 'lg', smile: 'compact', gap: {GAP} }}).map((d) => (

@@ -68,7 +68,7 @@ const picks = SHORTLIST.map((p) => {
   </head>
   <body>
     <header class="top">
-      <p class="eyebrow">Plozz · Mozz · Twozz · Hozz</p>
+      <p class="eyebrow">Plozz · Mozz · Strozz · Hozz</p>
       <h1>Each app gets its own object.</h1>
       <p class="lede">
         The last two rounds drew a ZZ and tinted it four ways. That is why every
@@ -148,6 +148,8 @@ const picks = SHORTLIST.map((p) => {
       {
         groups.map((g) => (
           <section class="app" id={g.app.key} style={`--hue:${g.app.hue};--deep:${g.app.deep}`}>
+            {/* Preserve bookmarked concept links from before the rename. */}
+            {g.app.key === 'strozz' && <span id="twozz" aria-hidden="true"></span>}
             <div class="app-head">
               <h2>{g.app.name}</h2>
               <p class="what">{g.app.what}</p>

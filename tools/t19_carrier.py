@@ -66,7 +66,7 @@ OUT = ROOT / 'src/components/mark/logos'
 # ---------------------------------------------------------------------------
 
 # Body, top row first. All widths even, so every row mirrors about x=16 by
-# construction. Shipped Twozz reads 18,22,24,26,26,28 into the corner; this
+# construction. Shipped Strozz reads 18,22,24,26,26,28 into the corner; this
 # keeps that and only softens the bottom by one step.
 BODY_W = [18, 22, 24, 26, 26, 28] + [28] * 13 + [26, 26, 24, 22]
 BODY_TOP = 2
@@ -362,7 +362,7 @@ interface Props { size?: number }
 const { size = 128 } = Astro.props;
 ---
 
-<MarkFrame size={size} title="Twozz — Carrier">
+<MarkFrame size={size} title="Strozz — Carrier">
 __PATHS__
   <g fill="__FACE__" shape-rendering="crispEdges">
     {facePathsAt({ cx: __CX__, cy: __CY__, size: '__SZ__', smile: '__SMILE__', gap: __GAP__ }).map((d) => (

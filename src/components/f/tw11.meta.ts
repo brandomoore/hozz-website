@@ -1,7 +1,7 @@
 export default {
   n: 'tw11',
   name: 'Aisles',
-  app: 'twozz',
+  app: 'strozz',
   object: 'Audience bowl facing stage',
   move: 'substitution',
   reading: 'letters',

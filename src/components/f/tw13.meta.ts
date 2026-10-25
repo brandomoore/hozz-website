@@ -1,7 +1,7 @@
 export default {
   n: 'tw13',
   name: 'Barrage',
-  app: 'twozz',
+  app: 'strozz',
   object: 'One emote, sent three times, retreating',
   move: 'aperture',
   reading: 'eyes',

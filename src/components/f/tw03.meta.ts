@@ -1,7 +1,7 @@
 export default {
   n: 'tw03',
   name: 'Turn',
-  app: 'twozz',
+  app: 'strozz',
   object: 'Speech bubble at a slight angle',
   move: 'continuation',
   reading: 'eyes',

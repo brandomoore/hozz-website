@@ -1,7 +1,7 @@
 export default {
   n: 'tw12',
   name: 'Watch party',
-  app: 'twozz',
+  app: 'strozz',
   object: 'Crowd facing one screen',
   move: 'aperture',
   reading: 'letters',

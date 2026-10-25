@@ -1,7 +1,7 @@
 export default {
   n: 'tw08',
   name: 'Crease',
-  app: 'twozz',
+  app: 'strozz',
   object: 'A face folded by a laugh',
   move: 'relief',
   reading: 'eyes',

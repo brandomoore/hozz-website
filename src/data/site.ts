@@ -292,7 +292,7 @@ export const FAQ = [
 export const SIBLINGS = [
   { name: 'Plozz', href: 'https://plozz.app', body: 'Jellyfin, Plex and Emby on Apple TV' },
   { name: 'Mozz', href: 'https://github.com/thatcube/Mozz', body: 'Your music, wherever it lives' },
-  { name: 'Twozz', href: 'https://github.com/thatcube/Twozz', body: 'Twitch on Apple TV' },
+  { name: 'Strozz', href: 'https://github.com/brandomoore/strozz', body: 'Twitch on Apple TV' },
 ];
 
 /**

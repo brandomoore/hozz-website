@@ -1,7 +1,7 @@
 export default {
   n: 'tw14',
   name: 'Wheeze',
-  app: 'twozz',
+  app: 'strozz',
   object: 'A round head with the face gone sideways',
   move: 'aperture',
   reading: 'eyes',

@@ -563,7 +563,7 @@ interface Props {{ size?: number }}
 const {{ size = 128 }} = Astro.props;
 ---
 
-<MarkFrame size={{size}} title="Twozz — {NAME}">
+<MarkFrame size={{size}} title="Strozz — {NAME}">
 {rows}
   <g fill="#ffffff" shape-rendering="crispEdges">
     {{facePathsAt({{ cx: 16, cy: {CY}, size: 'lg', smile: 'wide', gap: {GAP} }}).map((d) => (

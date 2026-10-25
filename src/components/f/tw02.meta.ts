@@ -1,7 +1,7 @@
 export default {
   n: 'tw02',
   name: 'Through',
-  app: 'twozz',
+  app: 'strozz',
   object: 'Two speech bubbles, one behind the other',
   move: 'occlusion',
   reading: 'letters',

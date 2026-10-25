@@ -88,7 +88,7 @@ on, not against an average. That is the binding constraint on the whole
 palette, and it is why the ramp reaches 4.5:1 by its fourth step: the face's
 upper-left corner is the brightest ground the ink ever touches.
 
-White ink, because FAMILY records Twozz's as white and it is why the shipped
+White ink, because FAMILY records Strozz's as white and it is why the shipped
 mark carries at 24px.
 """
 import sys
@@ -336,7 +336,7 @@ SPEC_C = '#d3b0fb'                              # the catch
 A, A_I = (0xb9, 0x88, 0xf0), 0                  # the lit shoulder
 B, B_I = (0x8a, 0x52, 0xdd), 3                  # the face's brightest ground
 C, C_I = (0x46, 0x21, 0x9c), STEPS - 1          # the far corner
-INK = '#ffffff'                                 # Twozz's own ink, per FAMILY
+INK = '#ffffff'                                 # Strozz's own ink, per FAMILY
 
 
 def lerp(p, q, t):
@@ -528,7 +528,7 @@ interface Props {{ size?: number }}
 const {{ size = 128 }} = Astro.props;
 ---
 
-<MarkFrame size={{size}} title="Twozz — {NAME}">
+<MarkFrame size={{size}} title="Strozz — {NAME}">
 {chr(10).join(body_lines)}
   <g fill="{INK}" shape-rendering="crispEdges">
     {{facePathsAt({{ cx: 16, cy: {FACE_CY}, size: '{FACE_SIZE}', smile: '{FACE_SMILE}', gap: {FACE_GAP} }}).map((d) => (

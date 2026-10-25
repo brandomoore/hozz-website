@@ -10,12 +10,12 @@
  */
 
 export interface App {
-  key: 'plozz' | 'mozz' | 'twozz' | 'hozz';
+  key: 'plozz' | 'mozz' | 'strozz' | 'hozz';
   name: string;
   what: string;
   /** What the mark should evoke, if it evokes anything beyond the ZZ. */
   motif: string;
-  /** Established hue. Plozz, Mozz and Twozz ship these; Hozz is open. */
+  /** Established hue. Plozz, Mozz and Strozz ship these; Hozz is open. */
   hue: string;
   deep: string;
   light: string;
@@ -41,8 +41,8 @@ export const APPS: App[] = [
     light: '#f58a99',
   },
   {
-    key: 'twozz',
-    name: 'Twozz',
+    key: 'strozz',
+    name: 'Strozz',
     what: 'Live streams and chat on Apple TV',
     motif: 'live — a signal, a bubble, presence',
     hue: '#8f52f6',

@@ -1,7 +1,7 @@
 export default {
   n: 'tw09',
   name: 'Sticker',
-  app: 'twozz',
+  app: 'strozz',
   object: 'One emote, die-cut, printed off register',
   move: 'aperture',
   reading: 'eyes',

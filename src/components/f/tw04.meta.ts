@@ -1,7 +1,7 @@
 export default {
   n: 'tw04',
   name: 'Live camera',
-  app: 'twozz',
+  app: 'strozz',
   object: 'Live studio camera',
   move: 'aperture',
   reading: 'letters',

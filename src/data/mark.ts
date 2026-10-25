@@ -2,7 +2,7 @@
  * The family face.
  *
  * Rasterised out of the three shipped marks — Plozz's TV, Mozz's disc and
- * Twozz's bubble — rather than eyeballed.
+ * Strozz's bubble — rather than eyeballed.
  *
  * What is actually fixed across the family is the **ZZ eyes**: two 4-wide Zs
  * with a 2-pixel gap, identical in all three. What varies is the smile and the
@@ -23,7 +23,7 @@
 /** Rows as [startX, endX] runs, relative to the face's left edge. */
 type Row = [number, number][];
 
-/** Identical in Plozz, Mozz and Twozz. This is the family signature. */
+/** Identical in Plozz, Mozz and Strozz. This is the family signature. */
 const EYES: Row[] = [
   [[0, 3], [6, 9]],
   [[2, 3], [8, 9]],
@@ -32,7 +32,7 @@ const EYES: Row[] = [
   [[0, 3], [6, 9]],
 ];
 
-/** Mozz and Twozz: 10 across, 4 rows. The most open, happiest reading. */
+/** Mozz and Strozz: 10 across, 4 rows. The most open, happiest reading. */
 const SMILE_WIDE: Row[] = [
   [[0, 0], [9, 9]],
   [[0, 1], [8, 9]],
@@ -126,7 +126,7 @@ export function faceBox(opts: FaceOpts = {}) {
 export const FAMILY = [
   { app: 'Plozz', what: 'TV', smile: 'compact', centre: [16, 18], ink: '#000000', mid: '#00a4dc', light: '#97e3fe', deep: '#007aaf' },
   { app: 'Mozz', what: 'disc', smile: 'wide', centre: [16, 16.5], ink: '#ffffff', mid: '#b00023', light: '#e34b4b', deep: '#3e0606' },
-  { app: 'Twozz', what: 'speech bubble', smile: 'wide', centre: [16, 14.5], ink: '#ffffff', mid: '#8f52f6', light: '#ad84ec', deep: '#7243c3' },
+  { app: 'Strozz', what: 'speech bubble', smile: 'wide', centre: [16, 14.5], ink: '#ffffff', mid: '#8f52f6', light: '#ad84ec', deep: '#7243c3' },
 ] as const;
 
 /* ---------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 export default {
   n: 'tw10',
   name: 'Chat column',
-  app: 'twozz',
+  app: 'strozz',
   object: 'Ragged scrolling chat column',
   move: 'aperture',
   reading: 'letters',

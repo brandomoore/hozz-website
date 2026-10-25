@@ -2,12 +2,12 @@
 t15 — Swell. The bubble pulled toward the circle, and lit like one.
 
 The brief opened one door: "you can change the shape slightly to make it more
-round or cohesive." Hozz's chosen mark is a disc; Twozz's bubble is a rounded
+round or cohesive." Hozz's chosen mark is a disc; Strozz's bubble is a rounded
 rectangle with a five-row corner. They do not rhyme. So this mark takes its
 corners **out of the same circle Hozz is drawn from** — the canonical
 `circle(24)` cap, one step wider than Hozz's own 22 disc — and hangs them on a
 28-wide body. The corner now runs nine rows instead of five, so the curvature of
-a Twozz corner and the curvature of the Hozz disc are the same curve.
+a Strozz corner and the curvature of the Hozz disc are the same curve.
 
 How far is too far: the body keeps 28x23, so it is still measurably wider than
 it is tall (the shipped one is 28x23 too — the footprint is unchanged, only the
@@ -165,7 +165,7 @@ EDGE = {p: min(hypot(p[0] - q[0], p[1] - q[1]) for q in OUTSIDE) for p in INNER}
 # more than MAX_STEP, or the interior reads as bands rather than as a surface.
 # ---------------------------------------------------------------------------
 LIGHT = (0xcd, 0xb0, 0xfa)
-MID = (0x8f, 0x52, 0xf6)      # the shipped Twozz body colour, tone 6
+MID = (0x8f, 0x52, 0xf6)      # the shipped Strozz body colour, tone 6
 DEEP = (0x66, 0x33, 0xbb)     # a shade under the shipped #7243c3, tone 10
 N = 11
 MID_AT = 6
@@ -389,7 +389,7 @@ body_rows = '\n'.join(
  * Hozz's chosen mark is a disc and this is a rounded rectangle, so the two did
  * not rhyme. The corners here are the cap of the canonical **24-across circle**
  * — one step wider than the 22 Hozz is drawn from — widened onto a 28 body, so
- * a Twozz corner and the Hozz disc are now literally the same curve. Nine rows
+ * a Strozz corner and the Hozz disc are now literally the same curve. Nine rows
  * of corner against the shipped five.
  *
  * It stops one step short of round. The body is 28x23, the shipped footprint
@@ -426,7 +426,7 @@ interface Props {{ size?: number }}
 const {{ size = 128 }} = Astro.props;
 ---
 
-<MarkFrame size={{size}} title="Twozz — {NAME}">
+<MarkFrame size={{size}} title="Strozz — {NAME}">
 {body_rows}
   <g fill="{FACE_FILL}" shape-rendering="crispEdges">
     {{facePathsAt({{ cx: 16, cy: {CY:g}, size: '{SIZE}', smile: '{SMILE}', gap: {GAP} }}).map((d) => (
